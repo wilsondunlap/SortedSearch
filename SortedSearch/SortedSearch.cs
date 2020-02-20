@@ -8,24 +8,24 @@ namespace SortedSearch
 {
     internal class SortedSearch
     {
-        static internal int CountNumbersLessThan(int[] sortedNumbers, int upperBound)
+        static internal int CountNumbersLessThan(int[] sortedNumbers, int lessThan)
         {
             if(sortedNumbers.Length == 0) 
             {
                 return 0;
             }
 
-            if(sortedNumbers[0] >= upperBound)
+            if(sortedNumbers[0] >= lessThan)
             {
                 return 0;
             }
 
-            if(sortedNumbers.Last() < upperBound)
+            if(sortedNumbers.Last() < lessThan)
             {
                 return sortedNumbers.Length;
             }
 
-            return ConductBinarySearch(sortedNumbers, upperBound, 0, sortedNumbers.Length - 1);
+            return ConductBinarySearch(sortedNumbers, lessThan, 0, sortedNumbers.Length - 1);
         }
 
         static internal int ConductBinarySearch(int[] sortedNumbers, int max, int lowerBound, int upperBound)
